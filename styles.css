@@ -1,0 +1,209 @@
+body.home #home a,
+body.hadiths #hadiths a,
+body.articles #articles a,
+body.events #events a,
+body.contact #contact a {
+text-decoration: underline ;
+    
+}
+
+body {
+    background: url('download.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+nav ul li a {
+    color: white;
+   
+}
+nav ul li a:hover {
+    color: blue;
+}
+
+header {
+    background-color: rgba(1, 46, 1, 0.791);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+nav {
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+
+    color: #ecf0f1;
+}
+
+
+#five-pillars {
+    
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#five-pillars h2 {
+    margin-top: -50px;
+    font-size: 50px;
+}
+
+.pillar {
+    background: url('background image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 30px;
+    padding: 20px;
+    background-color: #eef1ec; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.pillar:hover {
+    transform: scale(1.09);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.pillar i {
+    font-size: 60px;
+    color: #3498db; 
+}
+
+.pillar h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    color: #333;
+}
+
+.pillar p {
+    text-align: center;
+    color: black;
+}
+
+#general-content {
+    margin-top: 50px;
+    background-color: #ffffff;
+    color: #ffffff;
+    position: relative;
+    background: url('background\ image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align:center;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer; 
+    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#general-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#general-content::before {
+    content: "";
+    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.form-btn{
+    border: 0.5px solid black;
+    color: black;
+    border-radius: 13%;
+    background-color: antiquewhite;
+}
+
+#general-content h2,h3 ,
+#general-content p {
+    text-align: left;
+    color: black;
+    position: relative;
+}
+#general-content form{
+    z-index: 10000;
+    color: black;
+    
+}
+
+#general-content h2  {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#general-content p {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+    main {
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    nav ul {
+        flex-wrap: nowrap; /* Ensure all items stay on one line */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Decrease margin for smaller screens */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    main {
+        max-width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        max-width: 800px; /* Keeping the same width as laptop */
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
