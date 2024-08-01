@@ -13,26 +13,49 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-}
 
+} 
+.nav-toggle {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100; /* Ensure it's above other elements */
+}
 nav ul li a {
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s, background-color 0.3s;
    
 }
 nav ul li a:hover {
-    color: blue;
+    color:yellow;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
 header {
-    background-color: rgba(1, 46, 1, 0.791);
+    border: none;
+    background-color: rgba(1, 46, 1, 2);
     color: white;
     text-align: center;
     padding: 1em 0;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    width: 100%; /* Ensures the header spans the full width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
 
 nav {
-    margin-top: 10px;
+    width: 100%;
 }
 
 ul {
@@ -40,6 +63,8 @@ ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    margin: 0;
+    flex-wrap: wrap; /* Ensure items wrap on small screens */
 }
 
 li {
@@ -57,6 +82,8 @@ main {
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+    border-radius: 10px;
 }
 
 footer {
@@ -113,10 +140,11 @@ footer {
     color: black;
 }
 
+
 #general-content {
     margin-top: 50px;
-    background-color: #ffffff;
-    color: #ffffff;
+    
+  
     position: relative;
     background: url('background\ image.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -124,18 +152,17 @@ footer {
     padding: 20px;
     border-radius: 10px;
     cursor: pointer; 
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #general-content:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #general-content::before {
     content: "";
-    
     top: 0;
     right: 0;
     bottom: 0;
@@ -169,6 +196,7 @@ footer {
 }
 
 #general-content p {
+    text-align: center;
     color: black;
     font-size: 18px;
     margin-bottom: 10px;
@@ -178,17 +206,67 @@ footer {
 
 /* Responsive adjustments */
 @media screen and (max-width: 767px) {
-    main {
-        max-width: 90%;
-        margin: 10px auto;
-        padding: 10px;
+    .nav-toggle {
+        display: block; /* Show the toggle button on small screens */
+        
     }
+    header{
+      margin-bottom: -10px;
+      padding:1.5rem 0 ;
+}
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px; /* Width of the sliding menu */
+        height: 100%;
+        background-color: rgba(1, 46, 1, 1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+       
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
     nav ul {
-        flex-wrap: nowrap; /* Ensure all items stay on one line */
+        display: block; /* Make sure the menu items are shown when active */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px; /* Add padding inside the menu */
+        
+    }
+    nav ul li.active a {
+        color: yellow; /* Or any color to highlight the active link */
+        background-color: rgba(255, 255, 255, 0.2); /* Subtle background highlight */
+        border-radius: 5px; /* Rounded corners for the active link */
+        text-decoration: none;
     }
 
     nav ul li {
-        margin: 0 5px; /* Decrease margin for smaller screens */
+        margin: 10px 0;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block; /* Make links occupy full width */
+        width: 100%; /* Ensure links take full width */
+        transition: color 0.3s, background-color 0.3s;
+    }
+    nav ul li a:hover {
+        color:yellow;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+
+    .pillar, #general-content {
+        margin: 10px;
+        padding: 15px;
     }
 }
 
@@ -198,6 +276,25 @@ footer {
         margin: 20px auto;
         padding: 20px;
     }
+    .pillar, #general-content {
+        margin: 20px;
+        padding: 20px;
+    }
+   
+}
+@media screen and (max-width: 320px) {
+    header {
+        padding: 0.5em 0;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    nav ul li {
+        margin: 3px 0;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -205,5 +302,9 @@ footer {
         max-width: 800px; /* Keeping the same width as laptop */
         margin: 20px auto;
         padding: 20px;
+    }
+    .pillar, #general-content {
+        margin: 30px;
+        padding: 30px;
     }
 }
