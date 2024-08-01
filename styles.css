@@ -18,7 +18,7 @@ body {
 .nav-toggle {
     display: none; /* Hidden by default */
     position: absolute;
-    top: -6px;
+    top: 5px;
     right: 6px;
     font-size: 24px;
     cursor: pointer;
@@ -39,23 +39,37 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+
 header {
-    border: none;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     background-color: rgba(1, 46, 1, 2);
     color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: -webkit-sticky; /* For Safari */
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensures it stays on top of other elements */
     width: 100%; /* Ensures the header spans the full width */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    margin-left: 20px;
+    max-height: 50px; /* Adjust logo size */
+    height: auto;
 }
 
-
 nav {
+    display: flex;
+    align-items: center;
     width: 100%;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 
 ul {
@@ -215,11 +229,18 @@ footer {
         
     }
     header{
+    
       margin-bottom: -10px;
-      padding:1.5rem 0 ;
-}
+     
+    }
+    #nav-menu{
+        margin-right: 0%;
+    }
 
     nav {
+        display: flex;
+        align-items: center;
+        justify-content: left;
         position: fixed;
         top: 0;
         right: 0;
@@ -232,7 +253,7 @@ footer {
         z-index: 1000;
        
     }
-
+    
     nav.active {
         transform: translateX(0);
     }
@@ -278,11 +299,12 @@ footer {
         transform: translateY(-5px); /* Same effect for focus as hover */
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Same effect for focus as hover */
     }
+    
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     main {
-        max-width: 80%;
+        max-width: 100%;
         margin: 20px auto;
         padding: 20px;
     }
@@ -290,12 +312,22 @@ footer {
         margin: 20px;
         padding: 20px;
     }
-   
+    
+    nav {
+        display: flex;
+        align-items: center; /* Align items in center */
+        justify-content: space-between;
+        
+      }
+      nav ul {
+        flex-wrap: nowrap; /* Prevent wrapping */
+      }
+    
 }
 @media screen and (max-width: 320px) {
-    header {
+    /* header {
         padding: 0.5em 0;
-    }
+    } */
 
     nav ul li a {
         padding: 5px 10px;
@@ -305,6 +337,8 @@ footer {
     nav ul li {
         margin: 3px 0;
     }
+    
+   
 }
 
 @media screen and (min-width: 992px) {
