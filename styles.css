@@ -244,7 +244,7 @@ footer {
         position: fixed;
         top: 0;
         right: 0;
-        width: 200px; /* Width of the sliding menu */
+        width: 250px; /* Width of the sliding menu */
         height: 100%;
         background-color: rgba(1, 46, 1, 1);
         transform: translateX(100%);
@@ -262,7 +262,7 @@ footer {
         display: block; /* Make sure the menu items are shown when active */
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px; /* Add padding inside the menu */
+        padding: 20px 0 0 0; /* Add padding inside the menu */
         
     }
     nav ul li.active a {
