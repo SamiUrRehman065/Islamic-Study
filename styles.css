@@ -203,7 +203,7 @@ footer {
 }
 .pillar:hover,
 .pillar:focus-within {
-    transform: translateY(-5px); /* Lift the element slightly on hover */
+    transform: scale(1.05); /* Lift the element slightly on hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
     background-color: #f0f0f0; /* Slight background change */
 }
